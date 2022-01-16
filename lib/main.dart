@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_ui_del/data/utility/palette.dart';
 import 'package:product_ui_del/screens/home_page.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Palette.appColor,
       ),
       home: const HomePage(),
     );

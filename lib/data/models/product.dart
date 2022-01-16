@@ -37,7 +37,6 @@ class Product {
     this.purchaseNote,
     this.categories,
     this.images,
-    this.metaData,
     this.store,
   });
 
@@ -81,12 +80,7 @@ class Product {
         images?.add(Images.fromJson(v));
       });
     }
-    if (json['meta_data'] != null) {
-      metaData = [];
-      json['meta_data'].forEach((v) {
-        metaData?.add(Meta_data.fromJson(v));
-      });
-    }
+
     store = json['store'] != null ? Store.fromJson(json['store']) : null;
   }
 
@@ -122,7 +116,6 @@ class Product {
   String? purchaseNote;
   List<Categories>? categories;
   List<Images>? images;
-  List<Meta_data>? metaData;
   Store? store;
 
   Map<String, dynamic> toJson() {
@@ -158,9 +151,6 @@ class Product {
 
     if (images != null) {
       map['images'] = images?.map((v) => v.toJson()).toList();
-    }
-    if (metaData != null) {
-      map['meta_data'] = metaData?.map((v) => v.toJson()).toList();
     }
     if (store != null) {
       map['store'] = store?.toJson();
